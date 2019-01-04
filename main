@@ -1,0 +1,137 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    cout << "sumeuje liczby parzyste" << endl << "1-parzyste od 1 do podanej" << endl << "2-parzyste z przedziału <a, b>" << endl << "3-parzyste z 10 podanych" << endl << "4-parzyste z podanych (0 konczy wczytywanie";
+    cout << "5-oblicza ile parzystych podał uzytkownik"
+    int sw;
+    cin >> sw;
+    switch (sw){
+    case 1:{
+    int liczba=0, sumkagumka=0;
+    cin >> liczba;
+    for(int i=1; i<=liczba; i++){
+        if (i%2==0){
+            sumkagumka+=i;
+        }
+    }
+    cout << sumkagumka;
+    return 0;
+    }break;
+
+    case 2:{
+    int liczba1=0, liczba2=0, sumkagumka=0;
+    cin >> liczba1;
+    cin >> liczba2;
+    for(int i=liczba1; i<=liczba2; i++){
+        if (i%2==0){
+            sumkagumka+=i;
+        }
+    }
+    cout << sumkagumka;
+    return 0;
+    }break;
+
+    case 3:{
+    int sumkagumka=0, liczba=0;
+    for(int i=0; i<10; i++){
+        cin >> liczba;
+        if(liczba%2==0){
+            sumkagumka+=liczba;
+        }
+    }
+        cout << sumkagumka;
+        return 0;
+    }break;
+
+    case 4:{
+    int sumkagumka=0, liczba=0;
+    while (cin >> liczba){
+            if(liczba==0){
+                break;
+            }
+        if(liczba%2==0){
+            sumkagumka+=liczba;
+        }
+    }
+        cout << sumkagumka;
+        return 0;
+    }break;
+
+    case 5:{
+    int sumkagumka=0, liczba=0;
+    while (cin >> liczba){
+            if(liczba==0){
+                break;
+            }
+        if(liczba%2==0){
+            sumkagumka++;
+        }
+    }
+        cout << sumkagumka;
+        return 0;
+    }break;
+
+    case 6:{
+    char literka;
+    for(int i=65; i<=90; i++){
+        literka=i;
+        cout << literka << " ";
+    }
+    cout << endl << endl << endl;
+    for(int i=90; i>=65; i--){
+        literka=i;
+        cout << literka << " ";
+    }
+    return 0;
+    }break;
+
+    case 7:{
+    string haslo="haslo";
+    string tex="x";
+    while(true){
+        cout << "podaj haslo: ";
+        cin >> tex;
+        if (tex==haslo){
+            break;
+        }
+        else{
+        cout << "zle haslo" << endl;
+        tex=" ";
+        }
+    }
+    cout << "dziala";
+    }break;
+
+    case 8:{
+    float a, b;
+    cin >> a >> b;
+    cout << fixed << setprecision( 2 ) << a*b << endl;
+    }break;
+
+    case 9:{
+        cout << "wylicza x" << endl;
+    int a, b, c;
+    cout << "ax+b=c" << endl << "wpisz a:";
+    cin >> a;
+    cout << "wpisz b: ";
+    cin >> b;
+    cout << "wpisz c: ";
+    cin >> c;
+    if (a==0){
+        if (b==c){
+            cout << "tozsamosciowe";
+        }
+        else{
+            cout << "brak rozwiazan";
+        }
+    }
+    cout << fixed << setprecision( 2 ) << (c-b)/a << endl;
+    return 0;
+    }break;
+    }
+}
